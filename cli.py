@@ -20,6 +20,6 @@ class TaskManager:
             print(f"{i}. {task.title} [{status}]")
     def mark_done(self,ind):
         self.tasks[ind].completed=True
-
-    def del_task():
+    def del_task(self,ind):
+        del self.tasks[ind]
     def save_task():    

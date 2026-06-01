@@ -1,10 +1,13 @@
+import json
 class Task:
     def __init__(self,name):
         self.title=name
         self.completed=False
-    def to_dict():
-    def from_dict():
-    
+    def to_dict(self):
+        return {
+            "title":self.title,
+            "completed":self.completed
+        }    
 class TaskManager:
     def __init__(self):
         self.tasks = []
@@ -22,4 +25,9 @@ class TaskManager:
         self.tasks[ind].completed=True
     def del_task(self,ind):
         del self.tasks[ind]
-    def save_task():    
+    def save_tasks(self):
+        data=[]
+        for task in self.tasks:
+            data.append(task.to_dict())
+        with open("tasks.json","w")as file:
+            json.dump(data,file,indent=4)

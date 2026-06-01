@@ -1,13 +1,15 @@
 class Task:
-    title=""
-    completed="False"
     def __init__(self,name):
         self.title=name
-        #self.completed="False"
+        self.completed="False"
     def to_dict():
     def from_dict():
     
 class TaskManager:
-    tasks=[]
-    filename = "tasks.json"
-    def add_task():
+    def __init__(self):
+        self.tasks = []
+    def add_task(title):
+        task=Task(title)
+        self.tasks.append(task)
+    def del_task():
+    def save_task():    

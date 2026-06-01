@@ -31,3 +31,15 @@ class TaskManager:
             data.append(task.to_dict())
         with open("tasks.json","w")as file:
             json.dump(data,file,indent=4)
+    def load_tasks(self):
+        try:
+            with open("tasks.json", "r") as file:
+                data = json.load(file)
+
+                for item in data:
+                    task = Task(item["title"])
+                    task.completed = item["completed"]
+                    self.tasks.append(task)
+
+        except FileNotFoundError:
+            pass

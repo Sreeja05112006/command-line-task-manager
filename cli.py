@@ -11,5 +11,12 @@ class TaskManager:
     def add_task(title):
         task=Task(title)
         self.tasks.append(task)
+    def list_tasks(self):
+        if task not in tasks:
+            print("No tasks found")
+            return False
+        for i,task in enumerate(self.tasks, start=1):
+            status = "✓" if task.completed else " "
+            print(f"{i}. {task.title} [{status}]")
     def del_task():
     def save_task():    
